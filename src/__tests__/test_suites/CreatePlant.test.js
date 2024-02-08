@@ -17,10 +17,11 @@ describe('2nd Deliverable', () => {
         fireEvent.change(getByPlaceholderText('Price'), { target: { value: firstPlant.price } });
         fireEvent.click(getByText('Add Plant'))
 
-        expect(fetch).toHaveBeenCalledWith("http://localhost:6001/plants", {
+        expect(fetch).toHaveBeenCalledWith("http://localhost:3001/plants", {
             method: "POST",
             headers: {
-              "Content-Type": "Application/JSON",
+              "Content-Type": "application/json",
+              "Accept": "application/json"
             },
             body: JSON.stringify(firstPlant),
         })
@@ -37,10 +38,11 @@ describe('2nd Deliverable', () => {
         fireEvent.change(getByPlaceholderText('Price'), { target: { value: secondPlant.price } });
         fireEvent.click(getByText('Add Plant'))
     
-        expect(fetch).toHaveBeenCalledWith("http://localhost:6001/plants", {
+        expect(fetch).toHaveBeenCalledWith("http://localhost:3001/plants", {
             method: "POST",
             headers: {
-              "Content-Type": "Application/JSON",
+              "Content-Type": "application/json",
+              "Accept": "application/json"
             },
             body: JSON.stringify(secondPlant),
         })
